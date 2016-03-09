@@ -26,47 +26,25 @@ Agencies/consultants working with Scala:
 
 * https://softwaremill.com
 
-"Reactive" means ???
+## What is Reactive?
 
-READ: http://www.reactivemanifesto.org/
+On September 16, 2014, Typesafe published their 
+![Reactive Manifesto](http://www.reactivemanifesto.org/)
+which asked readers to sign the manifesto as a commitment to build "Reactive"
+system with a more "coherant" appoach to systems that 
+have thiese characteristics:
+
+   * Responsive - responds in a timely manner
+   * Resilient - responsive in the face of failure
+   * Elastic - stays responsive under varying workload
+   * Message Driven - rely on asynchronous message-passing that ensures loose coupling, isolation, location transparency, and provides the means to delegate errors as messages.
+
+@reactivemanifesto
+
 
 Concise and expressive coding mean less liability and more legibility.
 
 Symbols as methods.
-
-## Libraries
-
-* http://www.lightbend.com/community/core-projects/play-framework
-
-   * https://www.playframework.com/
-   * http://akka.io/ for asynch and background processing
-   * Slick
-
-* http://spray.io/ for REST/HTTP servlet container Akka actors.
-
-* http://scalatra.org/ web micro-framework for creating REST APIs.
-
-* Logback logging library (16% vs. 5% for Log4j)
-
-* http://liftweb.net/ Lift framework is popular
-
-Among the top 100 libraries on GitHub:
-http://blog.takipi.com/the-top-100-scala-libraries-in-2015-based-on-64562-github-libraries/
-
-   * Spark blows Hadoop out of the water
-   * https://github.com/twitter/scalding for cascading Hadopp MapReduce jobs.
-   * https://github.com/adamw/veripacks to verify package specifications
-   * https://github.com/adamw/elasticmq for message-based queuing
-   * https://github.com/adamw/macwire for dependency injection.
-
-The ranking named ![H2](http://www.h2database.com/html/main.html)
-as the most popular database at #21.
-As a "very fast open source small footprint JBDC API database",
-H2 outranked MySQL (#33), and PostgreSQL (#50). 
-MongoDB didn’t make the list for Scala.
-
-* https://github.com/sbt/sbt-ghpages
-  generates a XSBT project website and pushes to ghpages on GitHub.com.
 
 ## Installation
 0. Instead of download from scala-lang.org/download/
@@ -75,7 +53,7 @@ MongoDB didn’t make the list for Scala.
 brew install scala --with-docs
    ```
 
-   This put scala in:
+   This put scala in this folder by default:
 
    ```
 /usr/local/Cellar/scala/2.9.2
@@ -84,7 +62,7 @@ brew install scala --with-docs
 0. Verify:
 
    ```
-   scala -version
+scala -version
    ```
 
    The response:
@@ -268,6 +246,8 @@ https://github.com/axel22)
 and clone https://github.com/scalameter/scalameter.git 
 and https://github.com/scalameter/scalameter-examples
 
+Among ![Alex's videos](https://www.youtube.com/channel/UCoyqnhi_BdpLrBVMvkNIMMw) 
+is [this one showing JVM GC profile](https://www.youtube.com/watch?v=UHCeXdxkx70)
 
 ## Scala is a New Paradigm from Java
 
@@ -507,4 +487,3 @@ https://www.youtube.com/watch?v=2Ji5i0x2gJI
    https://soundcloud.com/lightbend/scala-days-2014-git-going-faster-with-scala-roberto-tyley
 
 * Videos at http%3A%2F%2Fwww.parleys.com
-
