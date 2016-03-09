@@ -2,6 +2,8 @@ Here is my hands-on approach to introducing Scala to you.
 
 The sequence of information and examples here has been hand-crafted based on various tutorials.
 
+(This one page will be separated into separate ones)
+
 ## History
 * 2003 <a href="#Odersky">Martin Odersky</a> releases Version 1.0 of Scala after a year of work. 
 * 2011 TypeSafe formed to provide commercial support for a <a name="WhatIsReactive">Reactive Platform</a>.
@@ -507,6 +509,11 @@ Duncan K. DeVore (@ironfish, VP of Engineering at a power company)
 
    * ![VIDEO: The Autobiography of Building a Reactive Application at ScalaDays 2014 Berlin](https://www.parleys.com/tutorial/building-reactive-application)
 
+Shadaj Laddad
+
+   * shadaj.me
+   * https://www.parleys.com/tutorial/scala-power-versatility
+
 ## YouTube videos
 
 https://www.youtube.com/watch?v=Ytfw8Bg86p4
@@ -541,3 +548,7 @@ https://www.youtube.com/watch?v=2Ji5i0x2gJI
 
    * http://reactconf.com/ occured November 20, 2014 in San Francisco.
      See http://lanyrd.com/2014/reactsf/nov-20/
+
+   * #ScalaDays (2012, 2013, 2014, 2015)
+
+   * Meetup - Bay Area Scala Enthusiast group 
