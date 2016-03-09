@@ -1,6 +1,7 @@
 Here is my hands-on approach to introducing Scala to you.
 
-The sequence of information and examples here has been hand-crafted based on various tutorials.
+The sequence of information and examples here has been hand-crafted based on 
+various other tutorials.
 
 (This one page will be separated into separate ones)
 
@@ -17,7 +18,7 @@ On 2013, several people associated with Typesafe published a website named
 ![http://www.reactivemanifesto.org/](http://www.reactivemanifesto.org/)
 which asked readers to sign the manifesto as a commitment to build "Reactive"
 system with a more "coherant" appoach to systems that 
-have thiese characteristics:
+have these characteristics:
 
    * Responsive - responds in a timely manner
    * Resilient - responsive in the face of failure
@@ -30,7 +31,7 @@ and reflect the blog article by @jboner named
 ![Reactive Manifesto 2.0](https://www.lightbend.com/blog/reactive-manifesto-20).
 dated September 16, 2014.
 
-Tweets about this topic is at 
+Tweets about this topic are at 
 ![@reactivemanifesto](http://twitter.com/reactivemanifesto).
 
 Curiously, the Manifesto doesn't mention the word "Scala" at all.
@@ -61,7 +62,7 @@ The description of the Scala language is presented during hands-on activities be
 
 
 ## Installation
-0. Instead of download from scala-lang.org/download/
+0. PROTIP: Use Homebrew instead of download from scala-lang.org/download/
 
    ```
 brew install scala --with-docs
@@ -85,16 +86,11 @@ scala -version
 Scala code runner version 2.9.2 -- Copyright 2002-2011, LAMP/EPFL
    ```
 
-Scala compiles to Java, enabling it to use JRE, JVM.
+   NOTE: The "EPFL" is for École Polytechnique Fédérale de Lausanne
+   in Switzerland 
+   where
+   <a href="#Odersky">Martin Odersky</a> works.
 
-### Typesafe Activator
-On a Mac:
-
-   ```
-brew install typesafe-activator
-   ```
-
-   Its default port is 8888.
 
 
 ### IDE Choices Install 
@@ -103,7 +99,7 @@ brew install typesafe-activator
 0. Scala-ide.org is based on Eclipse (version 12.03).
 
 
-## Interactive
+## Interactive Command Line
 0. Open a Terminal command line window.
 0. Invoke the scala run-time console REPL (Read Evaluate Print Loop), Scala's interactive shell
 
@@ -125,7 +121,7 @@ println("Hello world");
 
    NOTE: Semicolons ("ugly cockroaches") are used only with multiple verbs on same line.
 
-   NOTE: Everything returns something (all Scala code is <strong>expression based</strong>).
+   NOTE: Everything returns something (all Scala code is "expression based").
 
 0. Quit back to bash console (like in vim):
 
@@ -133,33 +129,21 @@ println("Hello world");
 :q
    ``` 
 
-## Variables
+More about Scala coding is at
+<a href="scala-coding.md">scala-coding.md</a>.
 
-0. Define a string variable:
-
-   ```
-var hello : String = "Hello world";
-   ```
-
-   NOTE: All Scala values in value variables that cannot be changed (immutable).
-
-0. Define function:
-
-   ```
-def someFunc(a1:SomeType,...):SomeReturnType = {
-}
-
-def boolToInt(value : Boolean) =if(value) 1 else "0"
-   ```
 
 ## SBT (Simple Build Tool)
 SBT comes with Scala core, based on Maven:
 
 Under src are main and test.
 
-Under main are java, resources, and scala.
+   * Under main are java, resources, and scala.
 
-Under test are java, resources, and scala.
+   * Under test are java, resources, and scala.
+
+   NOTE: Scala compiles to Java, enabling it to use JRE, JVM and tooling around them.
+
 
 0. Create a folder with a .scala file.
 
@@ -190,7 +174,7 @@ Java HotSpot(TM) 64-Bit Server VM warning: ignore option MaxPermSize=256m;
 port was removed in 8.0
    ```
 
-   NOTE: The Scala compiler (scalac) was written by author of the Java compiler.
+   NOTE: The Scala compiler (scalac) was written by an author of the Java compiler.
 
 0. Use the console task:
 
@@ -201,6 +185,28 @@ console
   The response:
 
   Welcome to Scala version 2.10.3
+
+  (or whatever version)
+
+
+### Lightbend/Typesafe Activator
+Activator server app aims to be a friendly one-stop-shop to bootstrap Scala, Akka, and Play development. 
+It can be used as a wrapper script that launches into traditional command line sbt, 
+but it also includes a template and tutorial system, and an optional GUI for getting started.
+
+0. On a Mac, instead of downloading http://www.lightbend.com/activator/download
+
+   ```
+brew install typesafe-activator
+   ```
+
+   Its default port is 8888.
+
+   See: https://github.com/typesafehub/activator
+   for a video.
+
+   The Activator UI enables you to switch quickly among 
+   code, compile, test, run, and app windows.
 
 ### Define a build file
 0. In bash command-line console within the custom program folder:
@@ -479,6 +485,14 @@ Martin Odersky
 
    * https://www.youtube.com/watch?v=ecekSCX3B4Q
      Scala - the Simple Parts
+
+   * Martin conducted on Coursera COURSE:
+   ![Functional Programming Principles in Scala](https://www.coursera.org/course/progfun)
+   which is not available now.
+
+   * However, still available from May 2015 is Martin's COURSE:
+   ![Principles of Reactive Programming](https://www.coursera.org/course/reactive)
+
 
 Josh Suereth (@jsuereth)
 
