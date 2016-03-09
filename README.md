@@ -3,12 +3,39 @@ Here is my hands-on approach to introducing Scala to you.
 The sequence of information and examples here has been hand-crafted based on various tutorials.
 
 ## History
-* 2003 <a href="#Odersky">"Martin Odersky</a> releases Version 1.0 of Scala. 
-* 2011 TypeSafe's Reactive Platform provides commercial support.
+* 2003 <a href="#Odersky">Martin Odersky</a> releases Version 1.0 of Scala after a year of work. 
+* 2011 TypeSafe formed to provide commercial support for a <a name="WhatIsReactive">Reactive Platform</a>.
 * 2014 version 2.10.4
 * 2016 Feb 22 Typesafe changes name to ![Lightbend](http://www.lightbend.com/)
 
-## Why Scala?
+<a name="WhatIsReactive">
+## What is Reactive?</a>
+
+On 2013, several people associated with Typesafe published a website named
+![http://www.reactivemanifesto.org/](http://www.reactivemanifesto.org/)
+which asked readers to sign the manifesto as a commitment to build "Reactive"
+system with a more "coherant" appoach to systems that 
+have thiese characteristics:
+
+   * Responsive - responds in a timely manner
+   * Resilient - responsive in the face of failure
+   * Elastic - stays responsive under varying workload
+   * Message Driven - rely on asynchronous message-passing that ensures loose coupling, isolation, location transparency, and provides the means to delegate errors as messages.
+
+Terms used in the Manifesto are further defined in a
+![Glossary](http://www.reactivemanifesto.org/glossary),
+and reflect the blog article by @jboner named
+![Reactive Manifesto 2.0](https://www.lightbend.com/blog/reactive-manifesto-20).
+dated September 16, 2014.
+
+Tweets about this topic is at 
+![@reactivemanifesto](http://twitter.com/reactivemanifesto).
+
+Curiously, the Manifesto doesn't mention the word "Scala" at all.
+
+
+<a name="WhyScala">
+## Why Scala</a>
 The name Scala is derived from "scalable language".
 
 The extent of Twitter's adoption of Scala are:
@@ -24,27 +51,12 @@ Scala is also said to power The Guardian (UK), Wallmart, Sony, Huffington Post, 
 
 Agencies/consultants working with Scala:
 
-* https://softwaremill.com
+   * https://softwaremill.com
 
-## What is Reactive?
+The description of the Scala language is presented during hands-on activities below.
 
-On September 16, 2014, Typesafe published their 
-![Reactive Manifesto](http://www.reactivemanifesto.org/)
-which asked readers to sign the manifesto as a commitment to build "Reactive"
-system with a more "coherant" appoach to systems that 
-have thiese characteristics:
+   NOTE: Concise and expressive coding mean less liability and more legibility.
 
-   * Responsive - responds in a timely manner
-   * Resilient - responsive in the face of failure
-   * Elastic - stays responsive under varying workload
-   * Message Driven - rely on asynchronous message-passing that ensures loose coupling, isolation, location transparency, and provides the means to delegate errors as messages.
-
-@reactivemanifesto
-
-
-Concise and expressive coding mean less liability and more legibility.
-
-Symbols as methods.
 
 ## Installation
 0. Instead of download from scala-lang.org/download/
@@ -354,6 +366,10 @@ by Sébastien Doeraene in Switzerland (![@sjrdoeraene](https://twitter.com/sjrdo
    * https://www.youtube.com/watch?v=n1GgVWOThhY
      Scala.js: Next generation front end development in Scala
 
+* https://github.com/sbt/sbt-ghpages
+generates a XSBT project website and pushes to ghpages on GitHub.com.
+
+
 ## Mobile
 Due to its Java roots, Scala can be used to create Android apps
 using this IDE:
@@ -371,6 +387,37 @@ Spark is written in Scala.
 * https://www.youtube.com/watch?v=AHB6aJyhDSQ
    How Scala Conquered the Big Data World
 
+
+## Libraries
+
+* http://www.lightbend.com/community/core-projects/play-framework
+
+* https://www.playframework.com/
+* http://akka.io/ for asynch and background processing
+* Slick
+
+* http://spray.io/ for REST/HTTP servlet container Akka actors.
+
+* http://scalatra.org/ web micro-framework for creating REST APIs.
+
+* Logback logging library (16% vs. 5% for Log4j)
+
+* http://liftweb.net/ Lift framework is popular
+
+Among the top 100 libraries on GitHub:
+http://blog.takipi.com/the-top-100-scala-libraries-in-2015-based-on-64562-github-libraries/
+
+* Spark blows Hadoop out of the water
+* https://github.com/twitter/scalding for cascading Hadopp MapReduce jobs.
+* https://github.com/adamw/veripacks to verify package specifications
+* https://github.com/adamw/elasticmq for message-based queuing
+* https://github.com/adamw/macwire for dependency injection.
+
+The ranking named ![H2](http://www.h2database.com/html/main.html)
+as the most popular database at #21.
+As a "very fast open source small footprint JBDC API database",
+H2 outranked MySQL (#33), and PostgreSQL (#50). 
+MongoDB didn’t make the list for Scala.
 
 
 ## Learning Resources for Introduction
@@ -451,7 +498,10 @@ Craig Tataryn (of Canada)
      contains the PDF of slidedeck
 
 Jonas Bonér (@jboner)
-   is Founder & CTO of Lightbend
+   is Founder & CTO of Lightbend (Typesafe)
+   and inventor of Akka.
+
+   * http://jonasboner.com/
 
 Duncan K. DeVore (@ironfish, VP of Engineering at a power company)
 
@@ -483,7 +533,11 @@ https://www.youtube.com/watch?v=2Ji5i0x2gJI
    by Joe Barnes
 
 ## Notifications
-* Follow Lightbend on SoundCloud.com for podcasts such as  
-   https://soundcloud.com/lightbend/scala-days-2014-git-going-faster-with-scala-roberto-tyley
 
-* Videos at http%3A%2F%2Fwww.parleys.com
+   * Follow Lightbend on SoundCloud.com for podcasts such as
+     https://soundcloud.com/lightbend/scala-days-2014-git-going-faster-with-scala-roberto-tyley
+
+   * Videos at http%3A%2F%2Fwww.parleys.com
+
+   * http://reactconf.com/ occured November 20, 2014 in San Francisco.
+     See http://lanyrd.com/2014/reactsf/nov-20/
