@@ -1,9 +1,13 @@
-Here is my hands-on approach to introducing Scala to you.
+Here is my hands-on approach to introduce the ecosystem around the Scala programming language.
 
 The sequence of information and examples here has been hand-crafted based on 
 various other tutorials.
 
 (This one page will be separated into separate ones)
+
+## Definitions
+
+* Wikipedia
 
 ## History
 * 2003 <a href="#Odersky">Martin Odersky</a> releases Version 1.0 of Scala after a year of work. 
@@ -548,10 +552,17 @@ https://www.youtube.com/watch?v=PKc5IwHG68k
   Scala versus Java
   by NewCircle Training
 
-
 https://www.youtube.com/watch?v=2Ji5i0x2gJI
    Intro to Functional Programming in Scala
    by Joe Barnes
+
+Videos gradually revealing each box as I talk can be seen in a YouTube playlist:
+https://goo.gl/AKEFKj 
+for the expanded URL:
+https://www.youtube.com/playlist?list=PLsnl23XQgokHh5u2C4dbegMJdqfzY8K9k
+
+The QR code is provided of the link is provided here in case you prefer to watch videos on your smartphone. 
+
 
 ## Notifications
 
