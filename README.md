@@ -5,10 +5,6 @@ various other tutorials.
 
 (This one page will be separated into separate ones)
 
-## Definitions
-
-* Wikipedia
-
 ## History
 * 2003 <a href="#Odersky">Martin Odersky</a> releases Version 1.0 of Scala after a year of work. 
 * 2011 TypeSafe formed to provide commercial support for a <a name="WhatIsReactive">Reactive Platform</a>.
