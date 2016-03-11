@@ -105,7 +105,7 @@ which scala
    ```
 
 
-## Interactive Command Line
+## Interactive Command Line REPL
 0. In a Terminal command line window,
    invoke the Scala run-time console REPL (Read Evaluate Print Loop) 
    Scala's interactive shell
@@ -123,13 +123,37 @@ Type in expressions for evaluation. Or try :help.
 scala> _
    ```
 
+  NOTE: Scala runs on the Java platform (Java Virtual Machine).
+
+0. Get a list of REPL commands:
+
+   ```
+   :help
+   ```
+
+  NOTE: The colon precedes commands.
+
+0. Quit back to bash console (like in vim):
+
+   ```
+   :q
+   ``` 
+
+0. Open a Scala interactive command window (as explained above).
+0. Identify what folder you're at. On a Mac:
+
+   ```
+   :sh ls
+   ```
+
 0. Press Tab key for a list of all keywords and variables. Scroll up.
 
    NOTE: Auto-completion of possbilities and auto-fill.
 
-   NOTE: With Scala, a variable can be a function.
+   NOTE: With Scala, a variable can contain an executable function.
 
-0. Print Hello World
+
+0. Print text within REPL:
 
    ```
 println("Hello world");
@@ -139,20 +163,70 @@ println("Hello world");
 
    NOTE: Everything returns something (all Scala code is "expression based").
 
-0. Quit back to bash console (like in vim):
+   More about Scala coding is at
+   <a href="scala-coding.md">scala-coding.md</a>.
+
+## Create Scala Program HelloWorld 
+At your operating system shell:
+0. Create a folder to hold scripts. Typically this would be under git.
+0. Open a text editor (such as Sublime Text).
+0. Create a new file.
+0. Copy the code below and paste it in the editor.
 
    ```
-:q
-   ``` 
+object HelloWorld extends App {
+   println("Hello, World!")
+ }
+   ```
 
-More about Scala coding is at
-<a href="scala-coding.md">scala-coding.md</a>.
+  NOTE: With Scala, programs are objects. There is no main.
+   
+  This program only uses built-in println function, so no libraries need to be imported yet.
+ 
+0. Save the file as name <strong>HelloWorld.scala</strong>. 
+
+   NOTE: The text editor applies text coloring for Scala.
+
+0. Navigate to the file you just created.
+0. Compile it:
+
+   ```
+scalac HelloWorld.scala
+   ```
+
+  Congratulations!
+
+0. Run the compiled Scala program but on completion land in Scala shell (instead of exiting):
+
+   ```
+scala -i HelloWorld.scala
+   ```
+   
+  NOTE: This is to run Scala script to prepare Scala before presenting the scala prompt.
+
+0. Run the compiled Scala program and exit to the OS shell:
+
+   ```
+scala HelloWorld
+   ```
+
+  NOTE: This approach is used to run within shell scripts.
+
+0. Create a shell script with JVM specifications
+   (See http://www.scala-lang.org/docu/files/tools/scala.html)
+
+   ```
+#!/bin/sh
+env JAVACMD=java JAVA_OPTS="-Xmx512M -Xms16M -Xss16M" scala "$0" "$@"
+!#
+val r = Runtime.getRuntime
+println("Memory usage: "+ (r.totalMemory - r.freeMemory) + " of " + r.maxMemory)
+   ```
 
 ### IDE Choices Install 
 
 0. Click Install onethe Scala IDEs
 0. Scala-ide.org is based on Eclipse (version 12.03).
-
 
 
 ## SBT (Simple Build Tool)
@@ -209,6 +283,13 @@ console
   Welcome to Scala version 2.10.3
 
   (or whatever version)
+
+
+   NOTE: Scala compiles into Java.
+  As Android applications are typically supplied as Java bytecode to be translated upon installation.
+  
+  NOTE: Scala also can compile to JavaScript, making it possible to write Scala programs that can run in the browser.[21]
+
 
 
 ### Lightbend/Typesafe Activator
