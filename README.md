@@ -104,6 +104,7 @@ which scala
 /usr/local/bin/scala
    ```
 
+??? %SCALA_HOME%
 
 ## Interactive Command Line REPL
 0. In a Terminal command line window,
@@ -147,7 +148,7 @@ scala> _
 0. Print text within REPL:
 
    ```
-println("Hello world");
+println("Hello, World!");
    ```
 
    NOTE: Semicolons ("ugly cockroaches") are used only with multiple verbs on same line.
@@ -158,19 +159,29 @@ println("Hello world");
    More about Scala coding is at
    <a href="scala-coding.md">scala-coding.md</a>.
 
-0. To
-
-   ```
-println( Process("sh", Seq("-c","ulimit -n")).!! )
-   ```
-
 
 ## Create Scala Program HelloWorld 
 At your operating system shell:
 
-0. Create a folder to hold your Scala scripts. Typically this would be under Git version control.
+0. Create a folder to hold files for your Scala program source and files created around it.
+
+   ```
+mkdir HelloWorld && cd Helloworld
+   ```
+
+0. Typically this would be under Git version control.
+
+   ```
+git init
+   ```
+
+0. Create a text file:
+
+   ```
+copy con HelloWorld.scala
+   ```
+
 0. Open a text editor (such as Sublime Text).
-0. Create a new file.
 0. Copy the code below and paste it in the editor.
 
    ```
@@ -186,8 +197,6 @@ object HelloWorld extends App {
 
   NOTE: Default visibility in Scala is public.
 
-  NOTE: Scala has no static variables or methods. 
-  
 0. Save the file as name <strong>HelloWorld.scala</strong>. 
 
    NOTE: The text editor applies text coloring for Scala.
@@ -201,7 +210,31 @@ scalac HelloWorld.scala
 
    No response is a good response when it comes to this.
 
-0. Run the compiled Scala program but on completion land in Scala shell (instead of exiting):
+0. List files created during compilation:
+
+   * HelloWorld.class
+   * HelloWorld$.class
+   * HelloWorld$delayedInit$body.class
+
+   NOTE: Compilation creates class files containing Java byte code.
+
+0. Run the compiled Scala program which exits to the OS shell:
+
+   ```
+scala HelloWorld
+   ```
+
+  If you see the text specified in the println() function, congratulations.
+
+  NOTE: This approach is used to run within shell scripts.
+  
+0. Alternately run by specify a path:
+  
+   ```
+   scala -classpath . HelloWorld
+   ```
+
+0. Run the compiled Scala program so on completion land in the interactive Scala shell (instead of exiting):
 
    ```
 scala -i HelloWorld.scala
@@ -209,19 +242,12 @@ scala -i HelloWorld.scala
    
   NOTE: This is to run Scala script to prepare Scala before presenting the scala prompt.
 
-0. Run the compiled Scala program and exit to the OS shell:
+## Shell script to control JVM size
 
-   ```
-scala HelloWorld
-   ```
+   NOTE: When a Scala program runs, the operating system creates a new process runs a JVM 
 
-  Congratulations!
-
-  NOTE: This approach is used to run within shell scripts.
-
-## Shell script to call scala
-0. Create a shell script named <strong>scalaj.sh</strong> which specifies JVM specifications
-   (See http://www.scala-lang.org/docu/files/tools/scala.html)
+0. To control how much memory a JVM process uses,
+   create a shell script named <strong>scalaj.sh</strong>  
 
    ```
 #!/bin/sh
@@ -230,6 +256,9 @@ env JAVACMD=java JAVA_OPTS="-Xmx512M -Xms16M -Xss16M" scala "$0" "$@"
 val r = Runtime.getRuntime
 println("Memory usage: "+ (r.totalMemory - r.freeMemory) + " of " + r.maxMemory)
    ```
+
+   (This is based on http://www.scala-lang.org/docu/files/tools/scala.html)
+
 
 ## Shell commands within REPL
 
@@ -240,13 +269,16 @@ println("Memory usage: "+ (r.totalMemory - r.freeMemory) + " of " + r.maxMemory)
    import sys.process._
    ```
 
-0. Identify what folder you're at. On a Mac:
+0. Here is how to issue various operating system commands:
 
    ```
+   "pwd" !
+   "df -k" !
    "ls -al" !
    ```
 
-   The response:
+   You'll need to ignore stuff around the response, such as:
+
    ```
 warning: there was one feature warning; re-run with -feature for details
 total 8
@@ -256,21 +288,25 @@ drwxr-xr-x+ 18 mac  staff  612 Mar 11 05:30 ..
 res2: Int = 0
    ```
 
-   The 0 is a good thing.
+   The Int = 0 returned is expected.
+   But the "res2" is a name that changes with each invocation.
 
-0. Check the standard return code from res2 above.
-
-   ```
-println(res2)
-   ```
-
-0. Route output into a variable named result:
+0. Send output into a variable named result:
 
    ```
    val result = "ls -al" !!
    println(result)
    ```
 
+  Rembember the double !!.
+
+
+## Define a library function
+
+
+
+
+(Based on ![this post](http://stackoverflow.com/questions/8129185/how-do-i-get-the-current-script-or-class-name-in-scala))
 
 ## SBT (Simple Build Tool)
 SBT comes with Scala core (based on Maven):
@@ -283,22 +319,6 @@ Under src are main and test.
 
    NOTE: Scala compiles to Java, enabling it to use JRE, JVM and tooling around them.
 
-
-0. Create a folder with a .scala file.
-
-   ```
-mkdir HelloWorld && cd Helloworld
-git init
-copy con HelloWorld.scala
-   ```
-
-   A template creates:
-
-   ```
-class Main{
-   def sayHi() = println("Hello")
-}
-   ```
 
 0. Build it
 
