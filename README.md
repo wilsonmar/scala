@@ -668,6 +668,11 @@ Shadaj Laddad
    * shadaj.me
    * https://www.parleys.com/tutorial/scala-power-versatility
 
+Alvin Alexander
+
+   * ![OReilly book "Scala Cookbook"](http://www.amazon.com/gp/product/1449339611/)
+   * http://alvinalexander.com/
+
 ## YouTube videos
 
 https://www.youtube.com/watch?v=Ytfw8Bg86p4
