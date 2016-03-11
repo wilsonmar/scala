@@ -66,19 +66,13 @@ The description of the Scala language is presented during hands-on activities be
 
 
 ## Installation
-0. PROTIP: Use Homebrew instead of download from scala-lang.org/download/
+0. PROTIP: Use Homebrew instead of downloading from http://scala-lang.org/download (as many tutorials suggest).
 
    ```
 brew install scala --with-docs
    ```
 
-   This put scala in this folder by default:
-
-   ```
-/usr/local/Cellar/scala/2.9.2
-   ```
-
-0. Verify:
+0. Verify the version:
 
    ```
 scala -version
@@ -91,10 +85,20 @@ Scala code runner version 2.9.2 -- Copyright 2002-2011, LAMP/EPFL
    ```
 
    NOTE: The "EPFL" is for École Polytechnique Fédérale de Lausanne
-   in Switzerland 
-   where
+   in Switzerland where
    <a href="#Odersky">Martin Odersky</a> works.
 
+0. Where was scala installed?
+
+   ```
+which scala
+   ```
+
+   The response:
+
+   ```
+/usr/local/Cellar/scala/2.9.2
+   ```
 
 
 ### IDE Choices Install 
