@@ -43,7 +43,7 @@ Curiously, the Manifesto doesn't mention the word "Scala" at all.
 
 <a name="WhyScala">
 ## Why Scala</a>
-The name Scala is derived from "scalable language".
+The name Scala is a portmanteau of "scalable" and "language".
 
 The extent of Twitter's adoption of Scala are:
 
@@ -72,6 +72,12 @@ The description of the Scala language is presented during hands-on activities be
 brew install scala --with-docs
    ```
 
+  installation to:
+
+   ```
+/usr/local/Cellar/scala/...
+   ```
+
 0. Verify the version:
 
    ```
@@ -81,14 +87,16 @@ scala -version
    The response:
 
    ```
-Scala code runner version 2.9.2 -- Copyright 2002-2011, LAMP/EPFL
+Scala code runner version 2.11.8 -- Copyright 2002-2016, LAMP/EPFL
    ```
 
    NOTE: The "EPFL" is for École Polytechnique Fédérale de Lausanne
    in Switzerland where
-   <a href="#Odersky">Martin Odersky</a> works.
+   <a href="#Odersky">Martin Odersky</a> works, in their Programming Methods Laboratory.
 
-0. Where was scala installed?
+![Wikipedia](https://en.wikipedia.org/wiki/Scala_%28programming_language%29)
+
+0. Where is scala installed?
 
    ```
 which scala
@@ -97,25 +105,29 @@ which scala
    The response:
 
    ```
-/usr/local/Cellar/scala/2.9.2
+/usr/local/bin/scala
    ```
 
 
-### IDE Choices Install 
-
-0. Click Install one  the Scala IDEs
-0. Scala-ide.org is based on Eclipse (version 12.03).
-
-
 ## Interactive Command Line
-0. Open a Terminal command line window.
-0. Invoke the scala run-time console REPL (Read Evaluate Print Loop), Scala's interactive shell
+0. In a Terminal command line window,
+   invoke the Scala run-time console REPL (Read Evaluate Print Loop) 
+   Scala's interactive shell
 
    ```
 scala
    ```
 
-0. Press Tab key for a list of all keywords and variables.
+  The response:
+
+   ```
+Welcome to Scala 2.11.8 (Java HotSpot(TM) 64-Bit Server VM, Java 1.6.0_65).
+Type in expressions for evaluation. Or try :help.
+
+scala> _
+   ```
+
+0. Press Tab key for a list of all keywords and variables. Scroll up.
 
    NOTE: Auto-completion of possbilities and auto-fill.
 
@@ -140,9 +152,15 @@ println("Hello world");
 More about Scala coding is at
 <a href="scala-coding.md">scala-coding.md</a>.
 
+### IDE Choices Install 
+
+0. Click Install onethe Scala IDEs
+0. Scala-ide.org is based on Eclipse (version 12.03).
+
+
 
 ## SBT (Simple Build Tool)
-SBT comes with Scala core, based on Maven:
+SBT comes with Scala core (based on Maven):
 
 Under src are main and test.
 
