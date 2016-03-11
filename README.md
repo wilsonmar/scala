@@ -133,24 +133,15 @@ scala> _
 
   NOTE: The colon precedes commands.
 
-0. Quit back to bash console (like in vim):
+0. Quit back to bash console (like in the vim editor):
 
    ```
    :q
-   ``` 
-
-0. Open a Scala interactive command window (as explained above).
-0. Identify what folder you're at. On a Mac:
-
    ```
-   :sh ls
-   ```
+   
+   Alternately, press control+C on a Mac to exit the process running Scala.
 
-0. Press Tab key for a list of all keywords and variables. Scroll up.
-
-   NOTE: Auto-completion of possbilities and auto-fill.
-
-   NOTE: With Scala, a variable can contain an executable function.
+0. PROTIP: Navigate to the folder you want before entering scala REPL.
 
 
 0. Print text within REPL:
@@ -166,10 +157,17 @@ println("Hello world");
    More about Scala coding is at
    <a href="scala-coding.md">scala-coding.md</a>.
 
+0. To
+
+   ```
+println( Process("sh", Seq("-c","ulimit -n")).!! )
+   ```
+
+
 ## Create Scala Program HelloWorld 
 At your operating system shell:
 
-0. Create a folder to hold scripts. Typically this would be under git.
+0. Create a folder to hold your Scala scripts. Typically this would be under Git version control.
 0. Open a text editor (such as Sublime Text).
 0. Create a new file.
 0. Copy the code below and paste it in the editor.
@@ -224,10 +222,21 @@ val r = Runtime.getRuntime
 println("Memory usage: "+ (r.totalMemory - r.freeMemory) + " of " + r.maxMemory)
    ```
 
-### IDE Choices Install 
+## Shell commands within REPL
 
-0. Click Install onethe Scala IDEs
-0. Scala-ide.org is based on Eclipse (version 12.03).
+0. Open a Scala interactive command window (as explained above).
+0. Enable shell processing within REPL by importing the system library:
+
+   ```
+   import sys.process._
+   ```
+
+0. Identify what folder you're at. On a Mac:
+
+   ```
+   "ls -al" !
+   ```
+
 
 
 ## SBT (Simple Build Tool)
