@@ -104,8 +104,6 @@ which scala
 /usr/local/bin/scala
    ```
 
-??? %SCALA_HOME%
-
 ## Interactive Command Line REPL
 0. In a Terminal command line window,
    invoke the Scala run-time console REPL (Read Evaluate Print Loop) 
@@ -145,6 +143,7 @@ scala> _
 0. PROTIP: Navigate to the folder you want before entering scala REPL.
 
 ## Print command
+0. Enter the scala REPL again at the command line.
 0. Print text within REPL:
 
    ```
@@ -159,6 +158,7 @@ println("Hello, World!");
    More about Scala coding is at
    <a href="scala-coding.md">scala-coding.md</a>.
 
+0. Exit REPL again.
 
 ## Create Scala Program HelloWorld 
 At your operating system shell:
@@ -247,7 +247,7 @@ scala -i HelloWorld.scala
    NOTE: When a Scala program runs, the operating system creates a new process runs a JVM 
 
 0. To control how much memory a JVM process uses,
-   create a shell script named <strong>scalaj.sh</strong>  
+   create a shell script named <strong>sin.sh</strong>  
 
    ```
 #!/bin/sh
