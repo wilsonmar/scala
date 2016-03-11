@@ -58,6 +58,21 @@ var hello : String = "Hello world";
 NOTE: All Scala values in value variables that cannot be changed (immutable).
 
 0. Define function:
+The format to declare a function is:
+
+   ```
+   def functionName ([list of parameters]) : [return type]
+   ```
+
+The format to define a function is:
+
+   ```
+def functionName ([list of parameters]) : [return type] = {
+   function body
+   return [expr]
+}
+   ```
+
 
    ```
 def someFunc(a1:SomeType,...):SomeReturnType = {

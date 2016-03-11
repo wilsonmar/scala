@@ -6,7 +6,7 @@ various other tutorials.
 (This one page will be separated into separate ones)
 
 ## History
-* 2003 <a href="#Odersky">Martin Odersky</a> releases Version 1.0 of Scala after a year of work. 
+* 2003 <a href="#Odersky">Martin Odersky</a>'s group releases Version 1.0 of Scala after a year of work. 
 * 2011 TypeSafe formed to provide commercial support for a <a name="WhatIsReactive">Reactive Platform</a>.
 * 2014 version 2.10.4
 * 2016 Feb 22 Typesafe changes name to ![Lightbend](http://www.lightbend.com/)
@@ -62,7 +62,7 @@ The description of the Scala language is presented during hands-on activities be
 
 
 ## Installation
-0. PROTIP: Use Homebrew instead of downloading from http://scala-lang.org/download (as many tutorials suggest).
+0. PROTIP: On a Mac, use Homebrew instead of downloading from http://scala-lang.org/download (as many tutorials suggest).
 
    ```
 brew install scala --with-docs
@@ -74,13 +74,19 @@ brew install scala --with-docs
 /usr/local/Cellar/scala/...
    ```
 
+   Alternately, on Ubunto:
+
+   ```
+   apt-get 
+   ```
+
 0. Verify the version:
 
    ```
 scala -version
    ```
 
-   The response:
+   The response (assuming an installer from March 10, 2016):
 
    ```
 Scala code runner version 2.11.8 -- Copyright 2002-2016, LAMP/EPFL
@@ -90,18 +96,37 @@ Scala code runner version 2.11.8 -- Copyright 2002-2016, LAMP/EPFL
    in Switzerland where
    <a href="#Odersky">Martin Odersky</a> works, in their Programming Methods Laboratory.
 
-   ![Wikipedia](https://en.wikipedia.org/wiki/Scala_%28programming_language%29)
-
 0. Where is scala installed?
 
    ```
 which scala
    ```
 
-   The response:
+   The response on a Mac:
 
    ```
 /usr/local/bin/scala
+   ```
+
+   NOTE: The SCALA_HOME environment variable should be the directory where scala is installed from, such as ???
+   `/usr/share/scala` or `/usr/share/java/scala`.
+
+   ```
+export PATH="$SCALA_HOME/bin:$PATH"
+   ```
+
+0. To make this take effect:
+
+   ```
+   hash -r
+   ```
+
+   No response is expected from the command.
+
+0. Verify:
+
+   ```
+   echo $PATH
    ```
 
 ## Interactive Command Line REPL
@@ -132,6 +157,11 @@ scala> _
 
   NOTE: The colon precedes commands.
 
+0. Clear the screen using REPL :keybindings on the keyboard.
+   On a Mac, press control + L. On Windows press Ctrl + L.
+
+0. Press keyboard up arrow to retrieve history.
+
 0. Quit back to bash console (like in the vim editor):
 
    ```
@@ -160,9 +190,105 @@ println("Hello, World!");
 
 0. Exit REPL again.
 
-## Create Scala Program HelloWorld 
+
+## Clone the GitHub repository for this tutorial
 At your operating system shell:
 
+0. PROTIP: Create a workspace folder (such as "gits") 
+   to hold organizations within GitHub and other clouds.
+
+0. PROTIP: Create a folder for each organization, account, or
+   other grouping of repositories (such as "wilsonmar").
+
+0. At a folder of your choosing,
+   clone the repository referenced by this tutorial:
+
+   ```
+git clone https://github.com/wilsonmar/scala.git
+   ```
+
+0. cd within the folder just created:
+
+   ```
+cd scala
+   ```
+
+   There are several folders.
+
+0. cd into the folder relevant to the next section of this tutorial:
+
+   ```
+cd HelloWorld
+   ```
+
+
+## Shell commands within REPL
+
+0. Open a Scala interactive command window (as explained above)
+   if you're not already in one.
+
+0. Enable shell processing within REPL by importing the system library:
+
+   ```
+   import sys.process._
+   ```
+
+0. Issue a bash command to how much disk space is available. On a Mac:
+
+   ```
+   "df -k" !
+   ```
+
+0. Issue a command to list files in the present directory. On a Mac:
+
+   ```
+   "ls -al" !
+   ```
+
+   We need to ignore stuff around the response, such as:
+
+   ```
+warning: there was one feature warning; re-run with -feature for details
+total 8
+drwxr-xr-x   3 mac  staff  102 Mar 11 05:31 .
+drwxr-xr-x+ 18 mac  staff  612 Mar 11 05:30 ..
+-rw-r--r--   1 mac  staff   63 Mar 11 04:33 HelloWorld.scala
+res2: Int = 0
+   ```
+
+   The Int = 0 returned is expected.
+   But the "res2" is a name that changes with each invocation.
+
+0. Alternately, send output into a variable named result:
+
+   ```
+   val result = "ls -al" !!
+   println(result)
+   ```
+
+   NOTE: Rembember the double !!.
+
+   Notice there is only one file: HelloWorld.scala because
+   files created during compilation are not stored in git,
+   but in another repository such as Artifactory.
+
+0. Confirm your present working directory. On a Mac:
+
+   ```
+   "pwd" !
+   ```
+
+   If your user name is "mac", then:
+
+   ```
+/Users/mac/gits/wilsonmar/scala/HelloWorld
+   ```
+
+Alternately, you could create the HelloWorld program by following these
+instructions:
+
+
+### Scala Program HelloWorld
 0. Create a folder to hold files for your Scala program source and files created around it.
 
    ```
@@ -202,6 +328,11 @@ object HelloWorld extends App {
    NOTE: The text editor applies text coloring for Scala.
 
 0. Navigate to the file you just created.
+
+## Compile Scala from command line:
+Regardless of how you got the HelloWorld.scala program source:
+
+0. In a bash command line at the source folder:
 0. Compile it:
 
    ```
@@ -210,7 +341,26 @@ scalac HelloWorld.scala
 
    No response is a good response when it comes to this.
 
+   ### Troubleshoot compilation errors
+
+   However, if you get this:
+
+   ```
+   <console>:1: error: ';' expected but '.' found.
+   ```
+
+   This is because you're still in the scala REPL.
+   Exit out to the operating system command line to compile.
+
+   ### View results of compilation
+
 0. List files created during compilation:
+
+   ```
+   ls -al
+   ```
+
+   The response:
 
    * HelloWorld.class
    * HelloWorld$.class
@@ -218,36 +368,64 @@ scalac HelloWorld.scala
 
    NOTE: Compilation creates class files containing Java byte code.
 
-0. Run the compiled Scala program which exits to the OS shell:
 
-   ```
-scala HelloWorld
-   ```
+   ## Run scala class file
 
-  If you see the text specified in the println() function, congratulations.
-
-  NOTE: This approach is used to run within shell scripts.
-  
-0. Alternately run by specify a path:
-  
-   ```
-   scala -classpath . HelloWorld
-   ```
-
-0. Run the compiled Scala program so on completion land in the interactive Scala shell (instead of exiting):
+0. Run the compiled Scala class file so on completion lands within the interactive Scala shell (instead of exiting):
 
    ```
 scala -i HelloWorld.scala
    ```
+
+   If you see the text specified in the println() function, congratulations.
+
    
   NOTE: This is to run Scala script to prepare Scala before presenting the scala prompt.
+  
+0. Alternately run by specifying a path:
+  
+   ```
+   scala -i -classpath . HelloWorld
+   ```
 
-## Shell script to control JVM size
+0. Run the compiled Scala class file so on completion 
+   an exit occurs back to the OS shell after execution.
+
+   ```
+   scala HelloWorld
+   ```
+
+   NOTE: Such commands are used within shell scripts.
+
+
+## Use shell script to compile
+In the repository is a file named rn.sh.
+
+0. Enable the script:
+
+   ```
+   chmod a+x rn.sh
+   ```
+
+0. Run the script using default name of HelloWorld:
+
+   ```
+   ./rn.sh
+   ```
+
+0. Enable the script:
+
+   ```
+-bash: ./rn: No such file or directory
+   ```
+
+to control JVM size
 
    NOTE: When a Scala program runs, the operating system creates a new process runs a JVM 
 
 0. To control how much memory a JVM process uses,
-   create a shell script named <strong>sin.sh</strong>  
+   create a shell script named <strong>sin.sh</strong>
+   which is in the utils folder of the GitHub for this tutorial.  
 
    ```
 #!/bin/sh
@@ -260,45 +438,22 @@ println("Memory usage: "+ (r.totalMemory - r.freeMemory) + " of " + r.maxMemory)
    (This is based on http://www.scala-lang.org/docu/files/tools/scala.html)
 
 
-## Shell commands within REPL
+## Load a Scala program
 
-0. Open a Scala interactive command window (as explained above).
-0. Enable shell processing within REPL by importing the system library:
-
-   ```
-   import sys.process._
-   ```
-
-0. Here is how to issue various operating system commands:
+0. Navigate into the HelloWorld folder.
+0. Enter REPL.
+0. Type this:
 
    ```
-   "pwd" !
-   "df -k" !
-   "ls -al" !
+   :load HelloWorld.scala
    ```
 
-   You'll need to ignore stuff around the response, such as:
+   The response:
 
    ```
-warning: there was one feature warning; re-run with -feature for details
-total 8
-drwxr-xr-x   3 mac  staff  102 Mar 11 05:31 .
-drwxr-xr-x+ 18 mac  staff  612 Mar 11 05:30 ..
--rw-r--r--   1 mac  staff   63 Mar 11 04:33 HelloWorld.scala
-res2: Int = 0
+   Loading HelloWorld.scala...
+   defined object HelloWorld
    ```
-
-   The Int = 0 returned is expected.
-   But the "res2" is a name that changes with each invocation.
-
-0. Send output into a variable named result:
-
-   ```
-   val result = "ls -al" !!
-   println(result)
-   ```
-
-  Rembember the double !!.
 
 
 ## Define a library function
@@ -308,8 +463,14 @@ res2: Int = 0
 
 (Based on ![this post](http://stackoverflow.com/questions/8129185/how-do-i-get-the-current-script-or-class-name-in-scala))
 
+
+
 ## SBT (Simple Build Tool)
-SBT comes with Scala core (based on Maven):
+SBT comes with Scala core (based on Maven).
+
+Docs on it is at:
+
+   * http://www.scala-sbt.org/0.13.1/docs/Howto/
 
 Under src are main and test.
 
@@ -659,6 +820,10 @@ Martin Odersky
    * However, still available from May 2015 is Martin's COURSE:
    ![Principles of Reactive Programming](https://www.coursera.org/course/reactive)
 
+   * Book: Programming in Scala: 
+     http://www.artima.com/shop/programming_in_scala
+     Second Edition Published December 13, 2010
+     Errata: http://booksites.artima.com/programming_in_scala
 
 Josh Suereth (@jsuereth)
 
