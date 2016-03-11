@@ -143,7 +143,7 @@ scala> _
 
 0. PROTIP: Navigate to the folder you want before entering scala REPL.
 
-
+## Print command
 0. Print text within REPL:
 
    ```
@@ -193,7 +193,7 @@ object HelloWorld extends App {
 scalac HelloWorld.scala
    ```
 
-  Congratulations!
+   No response is a good response when it comes to this.
 
 0. Run the compiled Scala program but on completion land in Scala shell (instead of exiting):
 
@@ -209,9 +209,12 @@ scala -i HelloWorld.scala
 scala HelloWorld
    ```
 
+  Congratulations!
+
   NOTE: This approach is used to run within shell scripts.
 
-0. Create a shell script with JVM specifications
+## Shell script to call scala
+0. Create a shell script named <strong>scalaj.sh</strong> which specifies JVM specifications
    (See http://www.scala-lang.org/docu/files/tools/scala.html)
 
    ```
@@ -237,6 +240,30 @@ println("Memory usage: "+ (r.totalMemory - r.freeMemory) + " of " + r.maxMemory)
    "ls -al" !
    ```
 
+   The response:
+   ```
+warning: there was one feature warning; re-run with -feature for details
+total 8
+drwxr-xr-x   3 mac  staff  102 Mar 11 05:31 .
+drwxr-xr-x+ 18 mac  staff  612 Mar 11 05:30 ..
+-rw-r--r--   1 mac  staff   63 Mar 11 04:33 HelloWorld.scala
+res2: Int = 0
+   ```
+
+   The 0 is a good thing.
+
+0. Check the standard return code from res2 above.
+
+   ```
+println(res2)
+   ```
+
+0. Route output into a variable named result:
+
+   ```
+   val result = "ls -al" !!
+   println(result)
+   ```
 
 
 ## SBT (Simple Build Tool)
