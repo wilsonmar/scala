@@ -90,7 +90,7 @@ Scala code runner version 2.11.8 -- Copyright 2002-2016, LAMP/EPFL
    in Switzerland where
    <a href="#Odersky">Martin Odersky</a> works, in their Programming Methods Laboratory.
 
-![Wikipedia](https://en.wikipedia.org/wiki/Scala_%28programming_language%29)
+   ![Wikipedia](https://en.wikipedia.org/wiki/Scala_%28programming_language%29)
 
 0. Where is scala installed?
 
@@ -168,6 +168,7 @@ println("Hello world");
 
 ## Create Scala Program HelloWorld 
 At your operating system shell:
+
 0. Create a folder to hold scripts. Typically this would be under git.
 0. Open a text editor (such as Sublime Text).
 0. Create a new file.
