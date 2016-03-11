@@ -151,6 +151,7 @@ println("Hello world");
    ```
 
    NOTE: Semicolons ("ugly cockroaches") are used only with multiple verbs on same line.
+   Here's an example of how Scala has more <strong>syntactic flexibility</strong> than Java coding.
 
    NOTE: Everything returns something (all Scala code is "expression based").
 
@@ -178,10 +179,15 @@ object HelloWorld extends App {
  }
    ```
 
-  NOTE: With Scala, programs are objects. There is no main.
-   
   This program only uses built-in println function, so no libraries need to be imported yet.
  
+  NOTE: Rather than coding Java classes, Scala programmers code singleton objects.
+  The compiler converts Java classes with only one Java object.
+
+  NOTE: Default visibility in Scala is public.
+
+  NOTE: Scala has no static variables or methods. 
+  
 0. Save the file as name <strong>HelloWorld.scala</strong>. 
 
    NOTE: The text editor applies text coloring for Scala.
