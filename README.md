@@ -7,7 +7,7 @@ various other tutorials.
 
 ## History
 * 2003 <a href="#Odersky">Martin Odersky</a>'s group releases Version 1.0 of Scala after a year of work. 
-* 2011 TypeSafe formed to provide commercial support for a <a href="#WhatIsReactive">Reactive Platform</a>.
+* 2011 TypeSafe formed to provide commercial support for a <a href="#WhatIsReactive">Reactive</a> Platform.
 * 2014 version 2.10.4
 * 2016 Feb 22 Typesafe changes name to ![Lightbend](http://www.lightbend.com/)
 
