@@ -11,6 +11,8 @@ various other tutorials.
 * 2014 version 2.10.4
 * 2016 Feb 22 Typesafe changes name to ![Lightbend](http://www.lightbend.com/)
 
+![Features of each version are detailed on the Wikipedia page](https://en.wikipedia.org/wiki/Scala_%28programming_language%29#Versions)
+
 <a name="WhatIsReactive">
 ## What is Reactive?</a>
 
@@ -52,6 +54,8 @@ The extent of Twitter's adoption of Scala are:
 
 Scala is also said to power The Guardian (UK), Wallmart, Sony, Huffington Post, etc. 
 
+![Prominant ompanies using Scala are listed on this Wikipedia page](https://en.wikipedia.org/wiki/Scala_%28programming_language%29#Companies)
+
 Agencies/consultants working with Scala:
 
    * https://softwaremill.com
@@ -77,7 +81,7 @@ brew install scala --with-docs
    Alternately, on Ubunto:
 
    ```
-   apt-get 
+   sudo apt-get install scala
    ```
 
 0. Verify the version:
@@ -108,25 +112,10 @@ which scala
 /usr/local/bin/scala
    ```
 
-   NOTE: The SCALA_HOME environment variable should be the directory where scala is installed from, such as ???
-   `/usr/share/scala` or `/usr/share/java/scala`.
+0. Find the various scala files on the whole drive:
 
    ```
-export PATH="$SCALA_HOME/bin:$PATH"
-   ```
-
-0. To make this take effect:
-
-   ```
-   hash -r
-   ```
-
-   No response is expected from the command.
-
-0. Verify:
-
-   ```
-   echo $PATH
+sudo find / -name scala-*
    ```
 
 ## Interactive Command Line REPL
@@ -288,7 +277,7 @@ Alternately, you could create the HelloWorld program by following these
 instructions:
 
 
-### Scala Program HelloWorld
+### Scala Program HelloWorld.scala
 0. Create a folder to hold files for your Scala program source and files created around it.
 
    ```
@@ -398,7 +387,77 @@ scala -i HelloWorld.scala
    NOTE: Such commands are used within shell scripts.
 
 
+## Compile and run a package
+0. In a command line window, navigate to the folder containing
+   file named <strong>pkg.scala</strong>. 
+
+0. Edit the file.
+
+   NOTE: This file contains Scala code to define a 
+   <strong>package</strong> of functions.
+
+   ```
+package com.xyz.app1 {
+
+    object Hello {
+        def main(args:Array[String]) {
+            println("Hello")
+        }
+    }
+}
+   ```
+
+0. Exit the editor to compile it:
+
+   ```
+scalac pkg.scala
+   ```
+
+   No response is a good response when it comes to this.
+
+0. List files created during compilation:
+
+   ```
+   ls -al
+   ```
+
+   WARNING: Unlike individual source files created 
+   in the same folder as the scala code, 
+   a new folder "com" has been created.
+
+0. Drill into the folder com. Then into folder "xyz".
+   Also folder "app1". Finally two files:
+
+   * Hello.class
+   * Hello$.class
+
+0. To run the compiled classes, specify the full path,
+   including an object defined in the code:
+
+   ```
+scala com.xyz.app1.Hello
+   ```
+
+   If you see the text specified in the println() function, congratulations.
+
+   NOTE: on completion 
+   an exit occurs back to the OS shell after execution.
+
+
 ## Use shell script to compile
+The Scala Play framework defines a very specific set of folders to use.
+
+
+
+Under src are main and test.
+
+   * Under main are java, resources, and scala.
+
+   * Under test are java, resources, and scala.
+
+   NOTE: Scala compiles to Java, enabling it to use JRE, JVM and tooling around them.
+
+
 In the repository is a file named rn.sh.
 
 0. Enable the script:
@@ -471,14 +530,6 @@ SBT comes with Scala core (based on Maven).
 Docs on it is at:
 
    * http://www.scala-sbt.org/0.13.1/docs/Howto/
-
-Under src are main and test.
-
-   * Under main are java, resources, and scala.
-
-   * Under test are java, resources, and scala.
-
-   NOTE: Scala compiles to Java, enabling it to use JRE, JVM and tooling around them.
 
 
 0. Build it
@@ -864,6 +915,12 @@ Alvin Alexander
    * ![OReilly book "Scala Cookbook"](http://www.amazon.com/gp/product/1449339611/)
    * http://alvinalexander.com/
 
+Viktor Klang,
+one of the main contributors to Akka and co-author of Scala Future)
+
+   * Defends Scala vs. C#
+   https://medium.com/@viktorklang/hi-eef4acf316a8#.ez6xx6gxe
+
 ## YouTube videos
 
 https://www.youtube.com/watch?v=Ytfw8Bg86p4
@@ -909,3 +966,4 @@ The QR code is provided of the link is provided here in case you prefer to watch
    * #ScalaDays (2012, 2013, 2014, 2015)
 
    * Meetup - Bay Area Scala Enthusiast group 
+

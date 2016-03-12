@@ -17,6 +17,10 @@ import java.util.Calendar
 import java.text.SimpleDateFormat
 import scala.math.BigInt // http://stackoverflow.com/questions/19437297/scala-bigint-array
 
+// Print name of program executed:
+  println(s"Program of instantiated object: ${this.getClass.getName}")
+  println(s"Running: ${System.getProperty("sun.java.command")}")
+
 // Print parameters into program, 
 // if specified:
 //    println("Hello, " + args(0) + "!")
