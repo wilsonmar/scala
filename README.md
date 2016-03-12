@@ -43,6 +43,8 @@ Curiously, the Manifesto doesn't mention the word "Scala" at all.
 ## Why Scala</a>
 The name Scala is a portmanteau of "scalable" and "language".
 
+The official repository is at https://github.com/scala/scala
+
 The extent of Twitter's adoption of Scala are:
 
    * https://twitter.github.io/scala_school/
@@ -808,6 +810,10 @@ MongoDB didn’t make the list for Scala.
 
 ## Learning Resources for Introduction
 In addition to resources noted above,
+
+http://scala-lang.org/contribute/hacker-guide.html
+   The Scala Hacker Guide
+"covers the entire process, from the conception of your idea or bugfix to the point where it is merged into Scala. Throughout, we will use a running example of an idea or bugfix one might wish to contribute.
 
 http://amzn.to/1JfA1bV
 
