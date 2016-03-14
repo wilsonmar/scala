@@ -34,9 +34,11 @@ and reflect the blog article by @jboner named
 dated September 16, 2014.
 
 Tweets about this topic are at 
-![@reactivemanifesto](http://twitter.com/reactivemanifesto).
+(<a target="_blank" href="http://twitter.com/reactivemanifesto">@reactivemanifesto</a>.
 
-Curiously, the Manifesto doesn't mention the word "Scala" at all.
+Curiously, the Manifesto doesn't mention HOW
+it achieves all that wonderfullness.
+It doesn't ever mention the word "Scala" at all.
 
 
 <a name="WhyScala">
@@ -446,85 +448,6 @@ scala com.xyz.app1.Hello
    an exit occurs back to the OS shell after execution.
 
 
-## Use shell script to compile
-The Scala Play framework defines a very specific set of folders to use.
-
-
-
-Under src are main and test.
-
-   * Under main are java, resources, and scala.
-
-   * Under test are java, resources, and scala.
-
-   NOTE: Scala compiles to Java, enabling it to use JRE, JVM and tooling around them.
-
-
-In the repository is a file named rn.sh.
-
-0. Enable the script:
-
-   ```
-   chmod a+x rn.sh
-   ```
-
-0. Run the script using default name of HelloWorld:
-
-   ```
-   ./rn.sh
-   ```
-
-0. Enable the script:
-
-   ```
--bash: ./rn: No such file or directory
-   ```
-
-to control JVM size
-
-   NOTE: When a Scala program runs, the operating system creates a new process runs a JVM 
-
-0. To control how much memory a JVM process uses,
-   create a shell script named <strong>sin.sh</strong>
-   which is in the utils folder of the GitHub for this tutorial.  
-
-   ```
-#!/bin/sh
-env JAVACMD=java JAVA_OPTS="-Xmx512M -Xms16M -Xss16M" scala "$0" "$@"
-!#
-val r = Runtime.getRuntime
-println("Memory usage: "+ (r.totalMemory - r.freeMemory) + " of " + r.maxMemory)
-   ```
-
-   (This is based on http://www.scala-lang.org/docu/files/tools/scala.html)
-
-
-## Load a Scala program
-
-0. Navigate into the HelloWorld folder.
-0. Enter REPL.
-0. Type this:
-
-   ```
-   :load HelloWorld.scala
-   ```
-
-   The response:
-
-   ```
-   Loading HelloWorld.scala...
-   defined object HelloWorld
-   ```
-
-
-## Define a library function
-
-
-
-
-(Based on ![this post](http://stackoverflow.com/questions/8129185/how-do-i-get-the-current-script-or-class-name-in-scala))
-
-
 
 ## SBT (Simple Build Tool)
 SBT comes with Scala core (based on Maven).
@@ -533,6 +456,35 @@ Docs on it is at:
 
    * http://www.scala-sbt.org/0.13.1/docs/Howto/
 
+0. Install it using Homebrew:
+
+   ```
+   brew install sbt
+   ```
+
+   The response:
+
+   ```
+xcode-select: error: unable to get active developer directory, use `xcode-select --switch` to set one (or see `man xcode-select`)
+==> Downloading https://homebrew.bintray.com/bottles/sbt-0.13.11.el_capitan.bott
+######################################################################## 100.0%
+==> Pouring sbt-0.13.11.el_capitan.bottle.tar.gz
+==> Caveats
+You can use $SBT_OPTS to pass additional JVM options to SBT:
+   SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
+
+This formula is now using the standard typesafe sbt launcher script.
+Project specific options should be placed in .sbtopts in the root of your project.
+Global settings should be placed in /usr/local/etc/sbtopts
+==> Summary
+🍺  /usr/local/Cellar/sbt/0.13.11: 5 files, 1.2M
+   ```
+
+0. Confirm:
+
+   ```
+sbt -version
+   ```
 
 0. Build it
 
@@ -588,7 +540,7 @@ brew install typesafe-activator
    The Activator UI enables you to switch quickly among 
    code, compile, test, run, and app windows.
 
-### Define a build file
+### Define build files
 0. In bash command-line console within the custom program folder:
 
    ```
@@ -598,13 +550,16 @@ start build.sbt
 
 0. Create a project folder.
 
-0. Edit build.properties:
+0. Edit build.properties file:
 
    ```
 name := "Hello"
 version := "0.1"
-scalaVersion:= "2.10.4"
+scalaVersion := "2.10.4"
    ```
+
+   NOTE: The ":=" is Scala's transformation operator
+   to set a new value or replace existing value.
 
 0. Edit plugins.sbt for use with Eclipse IDE:
 
